@@ -1,0 +1,51 @@
+/* The Orbita palette of the app: ivory in light mode, night navy in dark. */
+:root {
+  --ground: #F5F3EE;
+  --card: #FFFFFF;
+  --line: #E3DFD6;
+  --text: #141A2E;
+  --muted: #5B6378;
+  --accent: #2F6FE4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #0B1020;
+    --card: #161D33;
+    --line: #263152;
+    --text: #EEF1F8;
+    --muted: #A3ACC2;
+    --accent: #4C8DFF;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--text);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+h1 { font-size: 34px; line-height: 1.2; margin: 4px 0 8px; letter-spacing: -0.5px; }
+h2 { font-size: 20px; margin: 36px 0 8px; }
+a { color: var(--accent); }
+.eyebrow { margin: 0; font-size: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); }
+.eyebrow a { color: inherit; text-decoration: none; }
+.meta { color: var(--muted); margin-top: 0; }
+ul { padding-left: 20px; }
+li { margin: 6px 0; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+td:first-child { width: 62%; }
+th, td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+th { font-size: 13px; color: var(--muted); font-weight: 600; }
+tr:last-child td { border-bottom: none; }
+@media (max-width: 560px) {
+  table, thead, tbody, tr, th, td { display: block; }
+  thead { display: none; }
+  td, td:first-child { width: auto; border-bottom: none; padding-bottom: 4px; }
+  td + td { color: var(--muted); padding-top: 0; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  tr:last-child td + td { border-bottom: none; }
+}
+.cards { display: grid; gap: 12px; margin-top: 28px; }
+.card { display: block; padding: 18px 20px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; text-decoration: none; color: var(--text); }
+.card strong { display: block; font-size: 17px; }
+.card span { color: var(--muted); font-size: 14px; }
